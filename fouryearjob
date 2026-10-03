@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>4-Year Career Roadmap</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #08111f;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      height: 70px;
+      padding: 0 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0b1628;
+      border-bottom: 1px solid #1d2d44;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4da3ff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #dbeafe;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #4da3ff;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      background:
+        radial-gradient(circle at top, #12345a 0%, #08111f 50%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #4da3ff, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #b9c7d9;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #3b82f6;
+      transform: translateY(-3px);
+    }
+
+    /* Section */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #9fb0c5;
+      margin-bottom: 60px;
+    }
+
+    /* Roadmap */
+    .roadmap {
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+
+    .roadmap::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #2563eb;
+      transform: translateX(-50%);
+    }
+
+    .year {
+      width: 50%;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    .year:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .year:nth-child(even) {
+      left: 50%;
+    }
+
+    .year::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      width: 18px;
+      height: 18px;
+      background: #4da3ff;
+      border-radius: 50%;
+      border: 4px solid #08111f;
+      z-index: 2;
+    }
+
+    .year:nth-child(odd)::after {
+      right: -9px;
+    }
+
+    .year:nth-child(even)::after {
+      left: -9px;
+    }
+
+    .card {
+      background: #0e1b2e;
+      border: 1px solid #203653;
+      border-radius: 15px;
+      padding: 30px;
+      transition: 0.3s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: #3b82f6;
+      box-shadow: 0 15px 40px rgba(37,99,235,0.2);
+    }
+
+    .year-number {
+      color: #4da3ff;
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin: 8px 0 15px;
+    }
+
+    .card p {
+      color: #aebed0;
+      margin-bottom: 20px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skills span {
+      background: #172943;
+      color: #cfe3ff;
+      padding: 7px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    /* Goals */
+    .goals {
+      background: #0b1628;
+    }
+
+    .goal-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .goal-card {
+      background: #101f34;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid #203653;
+    }
+
+    .goal-card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .goal-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .goal-card p {
+      color: #9fb0c5;
+      font-size: 14px;
+    }
+
+    /* Daily routine */
+    .routine {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .routine-box {
+      background: #0e1b2e;
+      border: 1px solid #203653;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .routine-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 25px;
+      border-bottom: 1px solid #203653;
+    }
+
+    .routine-row:last-child {
+      border-bottom: none;
+    }
+
+    .routine-row span:last-child {
+      color: #4da3ff;
+      font-weight: bold;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #102b4d, #111b35);
+      padding: 90px 20px;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #aebed0;
+      margin-bottom: 30px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #7f91a7;
+      background: #060d17;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+
+      nav {
+        padding: 0 5%;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .roadmap::before {
+        left: 10px;
+      }
+
+      .year,
+      .year:nth-child(even),
+      .year:nth-child(odd) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 0;
+      }
+
+      .year::after,
+      .year:nth-child(odd)::after,
+      .year:nth-child(even)::after {
+        left: 1px;
+        right: auto;
+      }
+
+      .goal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .cta h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">CareerPath 🚀</div>
+
+    <ul>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#routine">Routine</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>4-Year High Package Roadmap</h1>
+
+      <p>
+        A complete journey from a beginner engineering student
+        to a job-ready software professional.
+      </p>
+
+      <a href="#roadmap" class="btn">
+        Start Your Journey 🚀
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- Roadmap -->
+  <section id="roadmap">
+
+    <h2 class="section-title">
+      Your 4-Year Journey
+    </h2>
+
+    <p class="section-subtitle">
+      Follow the roadmap step by step and build your career.
+    </p>
+
+
+    <div class="roadmap">
+
+      <!-- Year 1 -->
+      <div class="year">
+
+        <div class="card">
+
+          <div class="year-number">
+            Year 01
+          </div>
+
+          <h3>Fundamentals & Communication</h3>
+
+          <p>
+            Build a strong foundation in programming,
+            computer science and communication skills.
+          </p>
+
+          <div class="skills">
+            <span>C++</span>
+            <span>Programming Basics</span>
+            <span>OOP</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Git & GitHub</span>
+            <span>English</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Year 2 -->
+      <div class="year">
+
+        <div class="card">
+
+          <div class="year-number">
+            Year 02
+          </div>
+
+          <h3>Problem Solving & DSA</h3>
+
+          <p>
+            Master one programming language and develop
+            strong problem-solving and algorithmic thinking.
+          </p>
+
+          <div class="skills">
+            <span>DSA</span>
+            <span>Arrays</span>
+            <span>Strings</span>
+            <span>Linked List</span>
+            <span>Trees</span>
+            <span>Graphs</span>
+            <span>Dynamic Programming</span>
+            <span>SQL</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Year 3 -->
+      <div class="year">
+
+        <div class="card">
+
+          <div class="year-number">
+            Year 03
+          </div>
+
+          <h3>Projects & Internship</h3>
+
+          <p>
+            Choose your specialization, build real-world
+            projects and gain practical industry experience.
+          </p>
+
+          <div class="skills">
+            <span>Web Development</span>
+            <span>React</span>
+            <span>Backend</span>
+            <span>Database</span>
+            <span>APIs</span>
+            <span>Cloud</span>
+            <span>Internship</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Year 4 -->
+      <div class="year">
+
+        <div class="card">
+
+          <div class="year-number">
+            Year 04
+          </div>
+
+          <h3>Job Ready & Interviews</h3>
+
+          <p>
+            Prepare for placements with DSA revision,
+            core CS subjects, system design and mock interviews.
+          </p>
+
+          <div class="skills">
+            <span>DSA Revision</span>
+            <span>DBMS</span>
+            <span>OS</span>
+            <span>Networks</span>
+            <span>System Design</span>
+            <span>Resume</span>
+            <span>Mock Interviews</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Goals -->
+  <section class="goals" id="goals">
+
+    <h2 class="section-title">
+      What You Should Have After 4 Years
+    </h2>
+
+    <p class="section-subtitle">
+      Your final career toolkit
+    </p>
+
+    <div class="goal-grid">
+
+      <div class="goal-card">
+        <div class="icon">💻</div>
+        <h3>Strong Coding</h3>
+        <p>
+          Strong programming and problem-solving skills.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">🚀</div>
+        <h3>Projects</h3>
+        <p>
+          3–5 quality real-world projects.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">🏢</div>
+        <h3>Internship</h3>
+        <p>
+          Practical experience through internships.
+        </p>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon">🎯</div>
+        <h3>Interview Ready</h3>
+        <p>
+          Resume, DSA and interview preparation.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Daily Routine -->
+  <section id="routine">
+
+    <h2 class="section-title">
+      Recommended Daily Routine
+    </h2>
+
+    <p class="section-subtitle">
+      Consistency is more important than studying for one day.
+    </p>
+
+    <div class="routine">
+
+      <div class="routine-box">
+
+        <div class="routine-row">
+          <span>Programming / DSA</span>
+          <span>1–1.5 Hours</span>
+        </div>
+
+        <div class="routine-row">
+          <span>College / CS Fundamentals</span>
+          <span>45 Minutes</span>
+        </div>
+
+        <div class="routine-row">
+          <span>Project / Development</span>
+          <span>1 Hour</span>
+        </div>
+
+        <div class="routine-row">
+          <span>Communication</span>
+          <span>30 Minutes</span>
+        </div>
+
+        <div class="routine-row">
+          <span>Revision</span>
+          <span>30 Minutes</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <h2>Start Building Your Future Today 🚀</h2>
+
+    <p>
+      Learn. Build. Practice. Improve. Get Job Ready.
+    </p>
+
+    <a href="#roadmap" class="btn">
+      Explore Roadmap
+    </a>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      © 2026 CareerPath | Build Skills. Build Your Future.
+    </p>
+
+  </footer>
+
+
+  <script>
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+      link.addEventListener("click", function(e) {
+
+        e.preventDefault();
+
+        const target = document.querySelector(
+          this.getAttribute("href")
+        );
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
